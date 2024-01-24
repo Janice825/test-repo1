@@ -1,0 +1,27 @@
+def case_counter(text):
+    
+
+# Test casesdef case_counter(s):
+    # Initialize counters for uppercase and lowercase
+    upper_count, lower_count = 0, 0
+
+    # Iterate over each character in the string
+    for char in text:
+        # Check if the character is uppercase and increment upper_count
+        if char.isupper():
+            upper_count += 1
+        # Check if the character is lowercase and increment lower_count
+        elif char.islower():
+            lower_count += 1
+
+    # Return the counts
+    return upper_count, lower_count
+
+print(case_counter("Hello"))
+
+print(
+    case_counter("Hello World!")
+)  # Expected: Uppercase letters: 2, Lowercase letters: 8
+print(case_counter("PYTHON"))  # Expected: Uppercase letters: 6, Lowercase letters: 0
+print(case_counter("python"))  # Expected: Uppercase letters: 0, Lowercase letters: 6
+print(case_counter("1234!@#$"))  # Expected: Uppercase letters: 0, Lowercase letters: 0
