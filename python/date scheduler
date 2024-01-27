@@ -1,0 +1,19 @@
+from datetime import datetime
+def date_passed(todays_date, scheduled_date):
+    def parse_date(date_str):
+        for suffix in ['st', 'nd', 'rd', 'th']:
+            date_str = date_str. replace(suffix, '')
+        return datetime.strptime(date_str, '%d %B')
+    todays_date = parse_date(todays_date)
+    scheduled_date = parse_date(scheduled_date)
+    
+    if todays_date > scheduled_date:
+        return "The scheduled date has passed."
+    elif todays_date < scheduled_date:
+        return "The scheduled date is yet to pass."
+    else:
+        return "The scheduled date is today."
+    
+print(date_passed("26th March", "25th March"))
+print(date_passed("26th March", "26th March"))
+print(date_passed("26th March", "27th March"))
