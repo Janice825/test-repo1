@@ -1,0 +1,2 @@
+print(longest_non_repeating_substring("abcabcbb")) 
+print(longest_non_repeating_substring("bbbbb"))     
