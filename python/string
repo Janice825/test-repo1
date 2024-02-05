@@ -1,0 +1,18 @@
+from collections import Counter
+
+def check_inclusion(s1, s2):
+    s1_count = Counter(s1)
+    window_count = Counter()
+
+    start = 0
+    for end in range(len(s2)):
+        window_count[s2[end]] += 1
+        if end - start + 1 > len(s1):
+            if window_count[s2[start]] == 1:
+                del window_count[s2[start]]
+            else:
+                window_count[s2[start]] -= 1
+            start += 1
+        if window_count == s1_count:
+            return True
+    return False
