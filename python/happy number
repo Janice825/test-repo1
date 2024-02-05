@@ -1,0 +1,18 @@
+def sum_square(n):  
+    sum = 0  
+    for i in str(n):  
+        sum += int(i) ** 2  
+    return sum  
+  
+list1 = []  
+n = int(input('number：'))  
+while sum_square(n) not in list1:  
+    n = sum_square(n)  
+    list1.append(n)  
+  
+if n == 1:  
+    print('happy number')  
+else:  
+    print('not happy number')  
+
+
