@@ -1,0 +1,9 @@
+a, b, c = 10, 6, 18  
+if a > b:  
+    max_num = a  
+else:  
+    max_num = b  
+if max_num < c:  
+    max_num = c  
+  
+print(max_num) # 18  
