@@ -1,0 +1,13 @@
+def valid_str(string):  
+    if len(string) % 2 == 1:  
+        return False  
+    while '()' in string or '[]' in string or '{}' in string:  
+        string = string.replace('()', '')  
+        string = string.replace('[]', '')  
+        string = string.replace('{}', '')  
+    return string == ''  
+  
+print(valid_str('()'))  # True  
+print(valid_str('()[]{}'))  # True  
+print(valid_str('()[]{[()]}'))  # True  
+print(valid_str('()[]{[(}]}'))  # False  
