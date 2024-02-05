@@ -1,0 +1,4 @@
+from itertools import permutations as pt
+N=list(input())
+for i in pt(N):
+  print("".join(i))
