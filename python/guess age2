@@ -1,0 +1,7 @@
+for i in range(10,30):  
+    i3 = str(i ** 3)  
+    i4 = str(i ** 4)  
+    if len(i3) == 4 and len(i4) == 6:  
+        if len(set(i3+i4)) == 10:  
+            print(i)  
+            print(i3 + i4)  
