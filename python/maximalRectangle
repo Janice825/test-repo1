@@ -1,0 +1,16 @@
+def maximalRectangle(matrix):
+    if not matrix: return 0
+    max_area = 0
+    dp = [0] * len(matrix[0])  # 以当前行为底的情况下，每列的高度
+    for row in matrix:
+        for i in range(len(row)):
+            # 更新高度
+            dp[i] = dp[i] + 1 if row[i] == '1' else 0
+        max_area = max(max_area, largestRectangleArea(dp))
+    return max_area
+
+def largestRectangleArea(heights):
+    stack = [-1]
+    max_area = 0
+    for i in range(len(heights)):
+        while stack[-1] != -1 and heights[stack[-1
